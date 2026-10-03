@@ -1,0 +1,206 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
+  background: #f0f2f5;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.app {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* ---------- calculator ---------- */
+
+.calculator {
+  background: #1f2937;
+  border-radius: 16px;
+  padding: 20px;
+  width: 320px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.display {
+  background: #111827;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 12px;
+  text-align: right;
+  min-height: 88px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.expression {
+  color: #9ca3af;
+  font-size: 16px;
+  word-break: break-all;
+  min-height: 20px;
+}
+
+.result {
+  color: #ffffff;
+  font-size: 36px;
+  font-weight: 600;
+  word-break: break-all;
+}
+
+.error {
+  color: #fca5a5;
+  font-size: 13px;
+  min-height: 18px;
+  margin-bottom: 8px;
+}
+
+.keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.key {
+  border: none;
+  border-radius: 10px;
+  padding: 16px 0;
+  font-size: 20px;
+  cursor: pointer;
+  background: #374151;
+  color: #f9fafb;
+  transition: background 0.15s ease;
+}
+
+.key:hover {
+  background: #4b5563;
+}
+
+.key:active {
+  transform: scale(0.96);
+}
+
+.key.fn {
+  background: #6b7280;
+}
+
+.key.op {
+  background: #2563eb;
+}
+
+.key.op:hover {
+  background: #3b82f6;
+}
+
+.key.equals {
+  background: #059669;
+}
+
+.key.equals:hover {
+  background: #10b981;
+}
+
+/* ---------- history ---------- */
+
+.history {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  width: 340px;
+  max-height: 520px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.history-header h2 {
+  font-size: 18px;
+  color: #111827;
+}
+
+.history-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.small-btn {
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 13px;
+  cursor: pointer;
+  color: #374151;
+}
+
+.small-btn:hover {
+  background: #f3f4f6;
+}
+
+.small-btn.danger {
+  color: #dc2626;
+  border-color: #fca5a5;
+}
+
+.history-list {
+  list-style: none;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.history-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 4px;
+  border-bottom: 1px solid #f3f4f6;
+  font-size: 14px;
+}
+
+.history-expr {
+  color: #111827;
+  word-break: break-all;
+}
+
+.history-time {
+  color: #9ca3af;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.history-delete {
+  border: none;
+  background: transparent;
+  color: #dc2626;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+
+.history-delete:hover {
+  background: #fee2e2;
+}
+
+.history-empty {
+  color: #9ca3af;
+  text-align: center;
+  padding: 24px 0;
+}
