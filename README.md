@@ -39,12 +39,22 @@ Open `http://localhost:5500/index.html` in a browser.
 The back-end API address is configured at the top of `src/script.js`:
 
 ```js
-const API_BASE = "http://localhost:5000/api";
+const API_BASE = "https://wj4f5da2.pythonanywhere.com/api";
 ```
 
-- Local development: keep the default (the back end runs on port 5000).
-- After deployment: change it to the public back-end URL, e.g.
-  `https://your-backend.onrender.com/api`.
+- Local development: change it to `http://localhost:5000/api`
+  (the back end runs on port 5000 by default).
+- The committed value already points at the deployed back end.
+
+## Deployment
+
+The front end is deployed on **PythonAnywhere** (free tier) as a static site,
+served from the same host as the back end via a static-files mapping:
+
+- **Live site**: https://wj4f5da2.pythonanywhere.com/
+
+The repository itself is also GitHub-Pages-ready: the site source lives in
+`src/`, so it can be published directly from the `main` branch if preferred.
 
 ## How the Front End Connects to the Back End
 
