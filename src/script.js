@@ -7,7 +7,7 @@
 "use strict";
 
 /* Back-end API base URL. Change this after deploying the back end. */
-const API_BASE = "http://localhost:5000/api";
+const API_BASE = "https://wj4f5da2.pythonanywhere.com/api";
 
 const expressionEl = document.getElementById("expression");
 const resultEl = document.getElementById("result");
