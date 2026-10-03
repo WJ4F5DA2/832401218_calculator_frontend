@@ -59,7 +59,7 @@ async function requestJson(url, options) {
   }
   const body = await response.json();
   if (!response.ok || body.success === false) {
-    throw new Error(body.message || "请求失败（HTTP " + response.status + "）");
+    throw new Error(body.message || "Request failed (HTTP " + response.status + ")");
   }
   return body;
 }
@@ -67,11 +67,11 @@ async function requestJson(url, options) {
 /** Send the expression to the back end and display its result. */
 async function calculate() {
   if (!expression.trim()) {
-    showError("请先输入表达式");
+    showError("Please enter an expression first");
     return;
   }
   clearError();
-  resultEl.textContent = "计算中…";
+  resultEl.textContent = "Calculating…";
   try {
     const data = await requestJson(API_BASE + "/calculate", {
       method: "POST",
@@ -93,14 +93,14 @@ async function loadHistory() {
     renderHistory(data.history);
   } catch (err) {
     historyListEl.innerHTML =
-      '<li class="history-empty">无法连接后端，无法加载历史</li>';
+      '<li class="history-empty">Cannot connect to the back end; history unavailable</li>';
   }
 }
 
 function renderHistory(records) {
   historyListEl.innerHTML = "";
   if (!records.length) {
-    historyListEl.innerHTML = '<li class="history-empty">暂无历史记录</li>';
+    historyListEl.innerHTML = '<li class="history-empty">No history records</li>';
     return;
   }
   records.forEach(function (record) {
@@ -119,7 +119,7 @@ function renderHistory(records) {
     const deleteBtn = document.createElement("button");
     deleteBtn.className = "history-delete";
     deleteBtn.type = "button";
-    deleteBtn.title = "删除这条记录";
+    deleteBtn.title = "Delete this record";
     deleteBtn.textContent = "×";
     deleteBtn.addEventListener("click", function () {
       deleteRecord(record.id);

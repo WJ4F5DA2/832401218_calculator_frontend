@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>计算器 · 前后端分离</title>
+  <title>Calculator · Front-End / Back-End Separation</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <main class="app">
-    <section class="calculator" aria-label="计算器">
+    <section class="calculator" aria-label="Calculator">
       <div class="display">
         <div id="expression" class="expression">&nbsp;</div>
         <div id="result" class="result">0</div>
@@ -42,16 +42,16 @@
       </div>
     </section>
 
-    <section class="history" aria-label="计算历史">
+    <section class="history" aria-label="History">
       <header class="history-header">
-        <h2>计算历史</h2>
+        <h2>History</h2>
         <div class="history-actions">
-          <button id="refresh-history" class="small-btn" type="button">刷新</button>
-          <button id="clear-history" class="small-btn danger" type="button">清空</button>
+          <button id="refresh-history" class="small-btn" type="button">Refresh</button>
+          <button id="clear-history" class="small-btn danger" type="button">Clear</button>
         </div>
       </header>
       <ul id="history-list" class="history-list">
-        <li class="history-empty">暂无历史记录</li>
+        <li class="history-empty">No history records</li>
       </ul>
     </section>
   </main>
